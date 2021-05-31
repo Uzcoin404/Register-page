@@ -90,7 +90,7 @@
     form{
         padding: 0 15px;
     }
-    .profile{
+    .profile__img__blog{
         width: 125px;
         height: 125px;
     }
@@ -126,7 +126,7 @@
     .panel__title{
         padding-bottom: 10px;
     }
-    .profile{
+    .profile__img__blog{
         width: 100px;
         height: 100px;
     }

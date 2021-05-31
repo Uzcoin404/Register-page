@@ -63,9 +63,13 @@ form{
     opacity: 0;
 }
 
-.profile{
+.profile__img__blog{
     width: 150px;
     height: 150px;
+}
+.profile{
+    width: 100%;
+    height: 100%;
 }
 .title{
     font-size: 45px;
