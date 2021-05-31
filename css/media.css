@@ -1,0 +1,145 @@
+@media (max-width: 750px){
+
+    .container{
+        min-height: 900px;
+        height: 100vh;
+    }
+
+    .container::before{
+        width: 1500px;
+        height: 1500px;
+        left: 30%;
+        bottom: 65%;
+        transform: translateX(-50%);
+        right: initial;
+        top: initial;
+        transition: 2s ease-in-out;
+    }
+
+    .sign__blog{
+        width: 100%;
+        left: 50%;
+        top: 95%;
+        transform: translate(-50%, -100%);
+        align-items: flex-end;
+    }
+
+    .panels__blog{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+    }
+
+    .left__panel{
+        grid-row: 1 / 2;
+        transition: .5s .8 ease-in-out;
+    }
+    .right__panel{
+        grid-row: 3 / 4;
+        transition: .5s .8 ease-in-out;
+    }
+
+    .panel{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 5%;
+    }
+    .panel .content{
+        padding-right: 12%;
+    }
+
+    .panel .panel__title{
+        font-size: 20px;
+        line-height: 24px;
+        padding-bottom: 5px;
+    }
+    .title{
+        font-size: 36px;
+    }
+    .btn{
+        width: 140px;
+        height: 45px;
+        letter-spacing: 1px;
+    }
+
+    .right__panel{
+        transform: translateY(300px);
+    }
+    .panel__img{
+        width: 250px;
+    }
+
+    .container.signup-mode::before{
+        transform: translate(-50%, 100%);
+        bottom: 33%;
+        right: initial;
+    }
+    .container.signup-mode .left__panel{
+        transform: translateY(-300px);
+    }
+    .container.signup-mode .sign__blog{
+        top: 5%;
+        transform: translate(-50%, 0);
+        left: 50%;
+    }
+
+}
+
+@media (max-width: 576px){
+
+    form{
+        padding: 0 15px;
+    }
+    .profile{
+        width: 125px;
+        height: 125px;
+    }
+
+    .panel__img{
+        display: none;
+    }
+    .panel{
+        padding: 0 10%;
+    }
+    .panel .content{
+        padding-right: 0;
+    }
+
+    .container::before{
+        width: 1000px;
+        height: 1000px;
+        bottom: 70%;
+        left: 50%;
+    }
+    .container.signup-mode::before{
+        bottom: 30%;
+        left: 50%;
+    }
+
+}
+
+@media (max-width: 425px){
+
+    .panel{
+        padding: 20px 10px;
+    }
+    .panel__title{
+        padding-bottom: 10px;
+    }
+    .profile{
+        width: 100px;
+        height: 100px;
+    }
+
+    .container::before{
+        width: 800px;
+        height: 800px;
+        bottom: 70%;
+        left: 50%;
+    }
+    .container.signup-mode::before{
+        bottom: 26%;
+        left: 50%;
+    }
+
+}
