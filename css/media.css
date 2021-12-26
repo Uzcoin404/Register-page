@@ -141,5 +141,7 @@
         bottom: 26%;
         left: 50%;
     }
-
+    .register{
+        padding: 0;
+    }
 }

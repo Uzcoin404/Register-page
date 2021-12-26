@@ -69,7 +69,7 @@
                                     <div class="input_item">
                                         <input name="email" type="email" class="form_input form_email" oninvalid="this.classList.add('invalid')" required>
                                         <label for="email" class="form_label"><i class="fas fa-envelope"></i> Email adress</label>
-                                        <p class="error_message">Email is wrong</p>
+                                        <p class="error_email">Email is wrong</p>
                                     </div>
                                     <div class="input_item">
                                         <input name="phone" type="number" class="form_input"  oninvalid="this.classList.add('invalid')" required>
@@ -79,12 +79,12 @@
                                 </div>
                                 <div class="form_page page_2 page_password">
                                     <div class="input_item textarea_item">
-                                        <textarea name="bio" maxlength="300" type="text" class="form_input form_textarea"  oninvalid="this.classList.add('invalid')" required></textarea>
+                                        <textarea name="bio" maxlength="300" type="text" class="form_input form_textarea"  oninvalid="this.classList.add('invalid')" tabindex="-1" required></textarea>
                                         <label for="bio" class="form_label"><i class="fas fa-info"></i> Bio</label>
                                     </div>
                                     <div class="input_item password_item">
                                         <span class="passwordEye"><i class="fas fa-eye-slash"></i></span>
-                                        <input name="password" type="password" class="form_input form_pass form_password" oninvalid="this.classList.add('invalid')" required>
+                                        <input name="password" type="password" class="form_input form_pass form_password" oninvalid="this.classList.add('invalid')" tabindex="-1" required>
                                         <label for="password" class="form_label"><i class="fas fa-lock"></i> Password</label>
                                     </div>
                                     <div class="password__content">
@@ -99,8 +99,9 @@
                                     </div>
                                     <div class="input_item password_item">
                                         <span class="passwordEye"><i class="fas fa-eye-slash"></i></span>
-                                        <input name="re-password" type="password" class="form_input form_pass form_password" oninvalid="this.classList.add('invalid')" required>
+                                        <input name="re-password" type="password" class="form_input form_pass form_password" oninvalid="this.classList.add('invalid')" tabindex="-1" required>
                                         <label for="password" class="form_label"><i class="fas fa-lock"></i> Re-enter Password</label>
+                                        <p class="error_pass">Password doesn't Match</p>
                                     </div>
                                     <div class="password__content">
                                         <div class="password__indicator">
@@ -113,8 +114,8 @@
                                         </ul>
                                     </div>
                                     <div class="register_buttons">
-                                        <button type="button" class="btn backBtn">Back</button>
-                                        <button type="button" class="btn nextBtn">Next</button>
+                                        <button type="button" class="btn backBtn" tabindex="-1">Back</button>
+                                        <button type="button" class="btn nextBtn" tabindex="-1">Next</button>
                                     </div>
                                 </div>
                                 <div class="form_page page_3">
@@ -131,12 +132,12 @@
                                                 <div class="formUploader__cancel"><i class="fas fa-times"></i></div>
                                                 <div class="formUploader__fileName"><p>File name</p></div>
                                             </div>
-                                            <input name="photo" type="file" class="imgUploader" accept=".jpg, .jpeg, .png" name="avatar" hidden>
+                                            <input name="photo" type="file" class="imgUploader" accept=".jpg, .jpeg, .png" name="avatar" tabindex="-1" hidden>
                                         </div>
                                     </div>
                                     <div class="register_buttons">
-                                        <button type="button" class="btn backBtn">Back</button>
-                                        <button type="submit" class="btn register_button" disabled>Submit</button>
+                                        <button type="button" class="btn backBtn" tabindex="-1">Back</button>
+                                        <button type="submit" class="btn register_button" tabindex="-1" disabled>Submit</button>
                                     </div>
                                 </div>
                             </div>

@@ -57,12 +57,13 @@ const inputs = document.querySelectorAll('.register input');
 const passwordEye = document.querySelectorAll('.passwordEye');
 const allPassword = document.querySelectorAll('.form_pass');
 const email = document.querySelector('.form_email');
-const errorMessage = document.querySelector('.error_message');
+const errorMessage = document.querySelector('.error_email');
+const errorPass = document.querySelector('.error_pass');
 const passwordContent = document.querySelectorAll('.password__content');
 const passwordIndicator = document.querySelectorAll('.password__indicator span');
 const registerBtn = document.querySelector('.register_button');
-const validateEmail = (email) => {
-    return String(email)
+const validateEmail = (eml) => {
+    return String(eml)
       .toLowerCase()
       .match(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -89,6 +90,7 @@ for (let i = 0; i < password.length; i++) {
     password[i].addEventListener('keyup', function(){
         var passValue = password[i].value;
         checkStrength(passValue, passwordIndicator[i], document.querySelectorAll('#passWeak')[i], document.querySelectorAll('#passMedium')[i], document.querySelectorAll('#passStrong')[i]);
+        checkStrength(passValue, passwordIndicator[i], document.querySelectorAll('#passWeak')[i], document.querySelectorAll('#passMedium')[i], document.querySelectorAll('#passStrong')[i]) ? errorPass.style.display = 'none' : errorPass.style.display = 'block';
     })
     password[i].addEventListener('focus', function(){
         passwordContent[i].classList.add('active');
@@ -100,10 +102,18 @@ for (let i = 0; i < password.length; i++) {
 email.addEventListener('input', function(){
     if (this.value.length >= 1) {
         email.classList.add('filled');
+        if (!validateEmail(this.value)) {
+            errorMessage.style.display = 'block';
+        } else{
+            errorMessage.style.display = 'none';
+        }
     } else{
         email.classList.remove('filled');
     }
+    console.log(this.value);
+    console.log(validateEmail(this.value));
 });
+
 function checkStrength(value, indicator, weak, medium, strong) {
     let strength = 0;
     if (value.length > 5) {
@@ -140,9 +150,11 @@ function checkStrength(value, indicator, weak, medium, strong) {
         indicator.style.background = '#00ff00';
         if (password[0].value === password[1].value) {
             registerBtn.disabled = false;
+            return true;
         }
     } else{
         registerBtn.disabled = true;
+        return false;
     }
 }
 
@@ -200,10 +212,6 @@ class imgUploader {
                     register.classList.add('invalid');
                 }
             }
-            if (validateEmail(email.value)) {
-                errorMessage.style.display = 'block';
-            }
-            console.log(validateEmail(email.value));
          });
     }
 }

@@ -52,13 +52,13 @@
     left: 0;
     width: 100%;
     height: 100%;
+    overflow-y: auto;
 }
 form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-y: auto;
     padding: 0 10px;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
@@ -70,6 +70,7 @@ form{
 .register{
     z-index: 1;
     opacity: 0;
+    overflow-x: hidden;
 }
 .register_content{
     max-width: 350px;
@@ -81,6 +82,8 @@ form{
     transition: all .5s;
 }
 .form_page{
+    overflow-y: auto;
+    padding-top: 5px;
     width: 50%;
     height: max-content;
     display: flex;
@@ -88,7 +91,7 @@ form{
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    min-height: 320px;
+    min-height: 350px;
 }
 
 .form_steps{
@@ -97,7 +100,7 @@ form{
     justify-content: space-between;
     margin: 0 auto;
     color: #333;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     background: transparent;
 }
 .steps{
@@ -142,7 +145,7 @@ form{
     background: #ff2340;
 }
 .form_title{
-    font-size: 56px;
+    font-size: 48px;
     background: linear-gradient(to right, #ff2340, #9500ff);
     background-clip: text;
     -webkit-background-clip: text;
@@ -222,19 +225,20 @@ form{
 .form_input:focus, .form_input:required.form_input:valid{
     border-color: #9500ff;
 }
-.error_message{
+.error_email, .error_pass{
     display: none;
+    position: absolute;
+    bottom: -20px;
+    font-weight: 600;
+    color: #ff2340;
 }
 .form_textarea{
     max-width: 100%;
-    min-width: 150px;
-    min-height: 120px;
-    max-height: 200px;
-    padding: 5px 15px;
+    height: 150px;
+    resize: none;
 }
 .textarea_item{
-    min-height: 120px;
-    max-height: 200px;
+    min-height: 150px;
 }
 .passwordEye{
     position: absolute;
