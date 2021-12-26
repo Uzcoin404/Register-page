@@ -52,7 +52,7 @@
                             </div>
                             <div class="steps">
                                 <p class="steps_title">Avatar</p>
-                                <span class="steps_numb">3</span>
+                                <span class="steps_numb step_end">3</span>
                             </div>
                         </div>
                         <div class="register_content">
@@ -67,18 +67,19 @@
                                         <label for="username" class="form_label"><i class="fas fa-user"></i> Username</label>
                                     </div>
                                     <div class="input_item">
-                                        <input name="email" type="email" class="form_input form_email" required>
+                                        <input name="email" type="email" class="form_input form_email" oninvalid="this.classList.add('invalid')" required>
                                         <label for="email" class="form_label"><i class="fas fa-envelope"></i> Email adress</label>
+                                        <p class="error_message">Email is wrong</p>
                                     </div>
                                     <div class="input_item">
-                                        <input name="phone" type="number" class="form_input" required>
+                                        <input name="phone" type="number" class="form_input"  oninvalid="this.classList.add('invalid')" required>
                                         <label for="phone" class="form_label"><i class="fas fa-phone"></i> Phone number</label>
                                     </div>
                                     <button type="button" class="btn nextBtn">Next</button>
                                 </div>
                                 <div class="form_page page_2 page_password">
                                     <div class="input_item textarea_item">
-                                        <textarea name="bio" maxlength="300" type="text" class="form_input form_textarea" required></textarea>
+                                        <textarea name="bio" maxlength="300" type="text" class="form_input form_textarea"  oninvalid="this.classList.add('invalid')" required></textarea>
                                         <label for="bio" class="form_label"><i class="fas fa-info"></i> Bio</label>
                                     </div>
                                     <div class="input_item password_item">
@@ -130,7 +131,7 @@
                                                 <div class="formUploader__cancel"><i class="fas fa-times"></i></div>
                                                 <div class="formUploader__fileName"><p>File name</p></div>
                                             </div>
-                                            <input name="photo" value="" type="file" class="imgUploader" accept=".jpg, .jpeg, .png" name="photo" hidden>
+                                            <input name="photo" type="file" class="imgUploader" accept=".jpg, .jpeg, .png" name="avatar" hidden>
                                         </div>
                                     </div>
                                     <div class="register_buttons">
@@ -140,6 +141,7 @@
                                 </div>
                             </div>
                         </div>
+                        <p class="invalid_info">Something entered Wrong! Please check it Out</p>
                     </form>
 
                 </div>

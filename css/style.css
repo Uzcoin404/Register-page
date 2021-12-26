@@ -78,7 +78,7 @@ form{
 .form_pages{
     display: flex;
     width: 300%;
-    transition: all .3s;
+    transition: all .5s;
 }
 .form_page{
     width: 50%;
@@ -92,17 +92,20 @@ form{
 }
 
 .form_steps{
-    width: 300px;
+    width: 250px;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     color: #333;
+    margin-bottom: 25px;
+    background: transparent;
 }
 .steps{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #9500ff;
 }
 .steps_numb{
     position: relative;
@@ -113,10 +116,11 @@ form{
     border-radius: 50%;
     border: 1px solid #9500ff;
     background: #fff;
+    color: #333;
     font-size: 18px;
     font-weight: 700;
 }
-.steps .steps_numb:last-child::after, .steps .steps_numb:last-child::before{
+.step_end::before, .step_end::after{
     display: none;
 }
 .steps_numb::after, .steps_numb::before{
@@ -124,18 +128,26 @@ form{
     position: absolute;
     background: #333;
     right: -90px;
-    bottom: 17px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 90px;
     height: 2px;
 }
-
+.steps.active .steps_numb{
+    background: #9500ff;
+    color: #fff;
+    border-color: #fff;
+}
+.steps.active .steps_numb::after, .steps.active .steps_numb::before{
+    background: #ff2340;
+}
 .form_title{
     font-size: 56px;
     background: linear-gradient(to right, #ff2340, #9500ff);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     letter-spacing: 1.5px;
     font-weight: 700;
     position: relative;
@@ -209,6 +221,9 @@ form{
 }
 .form_input:focus, .form_input:required.form_input:valid{
     border-color: #9500ff;
+}
+.error_message{
+    display: none;
 }
 .form_textarea{
     max-width: 100%;
@@ -447,10 +462,14 @@ form{
 .button:hover{
     background: #30a2ff;
 }
-.signin__text{
+.invalid_info{
     padding: 10px 0 5px;
     font-size: 18px;
     color: #444;
+    display: none;
+}
+.register.invalid .invalid_info{
+    display: block;
 }
 
 /* Panel Styling */
