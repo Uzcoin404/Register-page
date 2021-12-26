@@ -10,7 +10,7 @@ signup__btn.addEventListener('click', () => {
 });
 signin__btn.addEventListener('click', () => {
     container.classList.remove("signup-mode");
-    document.cookie = `page=signin;`;
+    document.cookie = `page=signin; expires=${daysToExpire}`;
 });
 const buttons = document.querySelector('#register__btn');
 
